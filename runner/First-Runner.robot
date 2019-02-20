@@ -49,6 +49,6 @@ testrun-firstrun
     Log    >>> Alllowing remote support
     Log To Console    >>> Alllowing remote support
     AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_allowremotetitle}    timeout=${waitTime}
-    AppiumLibrary.Click Element    ${xpath_QS_allowremote}
-    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_startnow}    timeout=${elementWaitTimeout}
-    AppiumLibrary.Click Element    ${xpath_QS_startnow}
+    AppiumLibrary.Click Element    ${xpath_QS_allowremotetitle}
+    Comment    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_startnow}    timeout=${elementWaitTimeout}
+    Comment    AppiumLibrary.Click Element    ${xpath_QS_startnow}
