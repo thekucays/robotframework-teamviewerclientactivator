@@ -1,0 +1,12 @@
+*** Variables ***
+${xpath_welcome_next}    //android.widget.TextView[contains(@text,'Next')]
+${xpath_welcome_done}    //android.widget.TextView[contains(@text,'Done')]
+${xpath_home_openQS}    //android.widget.Button[contains(@text, 'Open QuickSupport')]
+${xpath_QS_activatingtext}    //android.widget.TextView[contains(@text, 'Activating TeamViewer...')]
+${xpath_QS_ready}    //android.widget.TextView[contains(@text, 'Ready to connect (secure connection)')]
+${xpath_QS_clientid}    //android.widget.FrameLayout[contains(@resource-id, 'com.teamviewer.quicksupport.market:id/main_id_fragment_container')]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[contains(@index, '1')]
+${xpath_QS_allowremotetitle}    //android.widget.TextView[contains(@text, 'Allow remote support?')]
+${xpath_QS_allowremote}    //android.widget.Button[contains(@text, 'Allow')]
+${xpath_QS_startnow}    //android.widget.Button[contains(@text, 'Start now')]
+${xpath_QS_slide_firsttext}    //android.widget.TextView[contains(@text, "Share this device's screen to any computer or...")]
+${xpath_QS_slide_done}    //android.widget.Button[contains(@text, 'Done')]
