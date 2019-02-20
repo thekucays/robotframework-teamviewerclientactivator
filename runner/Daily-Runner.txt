@@ -1,0 +1,39 @@
+*** Settings ***
+Resource          ../config/config.robot
+Library           AppiumLibrary
+Resource          ../Resources/xpathlist.robot
+
+*** Test Cases ***
+testrun-dailyrun
+    Open Application    ${appiumServerLoc}    platformName=Android    platformVersion=${androidVersion}    deviceName=${deviceName}    appPackage=${packageName}    appActivity=${activityName}
+    Log To Console    >>>> App Opened
+    ### should be on welcome screen
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_welcome_next}    timeout=${elementWaitTimeout}
+    AppiumLibrary.Click Element    ${xpath_welcome_next}
+    AppiumLibrary.Click Element    ${xpath_welcome_next}
+    AppiumLibrary.Click Element    ${xpath_welcome_next}
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_welcome_done}    timeout=${elementWaitTimeout}
+    AppiumLibrary.Click Element    ${xpath_welcome_done}
+    ### should be landed on home page
+    Log To Console    >>> Landed on TeamViewer homepage
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_home_openQS}    timeout=${elementWaitTimeout}
+    AppiumLibrary.Click Element    ${xpath_home_openQS}
+    ### teamviewer quicksupport should be opened
+    Log To Console    >>> Opening QuickSupport
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_activatingtext}    timeout=${elementWaitTimeout}
+    Log To Console    >>> Activating QuickSupport...
+    Log    >>> Activating QuickSupport...
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_ready}    timeout=${elementWaitTimeout}
+    ### get client id
+    Log To Console    >>> Getting Client ID
+    ${clientID}=    AppiumLibrary.Get Text    ${xpath_QS_clientid}
+    Log To Console    >>> Client ID: ${clientID}
+    Log    >>> Client ID: ${clientID}
+    Sleep    3s
+    ### allow remote support
+    Log    >>> Alllowing remote support
+    Log To Console    >>> Alllowing remote support
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_allowremotetitle}    timeout=${waitTime}
+    AppiumLibrary.Click Element    ${xpath_QS_allowremote}
+    AppiumLibrary.Wait Until Element Is Visible    ${xpath_QS_startnow}    timeout=${elementWaitTimeout}
+    AppiumLibrary.Click Element    ${xpath_QS_startnow}
