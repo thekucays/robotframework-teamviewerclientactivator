@@ -8,6 +8,8 @@ testrun-firstrun
     Open Application    ${appiumServerLoc}    platformName=Android    platformVersion=${androidVersion}    deviceName=${deviceName}    appPackage=${packageName}    appActivity=${activityName}
     Log To Console    >>>> App Opened
     ### should be on welcome screen
+    Log To Console    >>> taking ss
+    AppiumLibrary.Capture Page Screenshot
     AppiumLibrary.Wait Until Element Is Visible    ${xpath_welcome_next}    timeout=${elementWaitTimeout}
     AppiumLibrary.Click Element    ${xpath_welcome_next}
     AppiumLibrary.Click Element    ${xpath_welcome_next}
