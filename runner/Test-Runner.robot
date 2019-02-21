@@ -6,3 +6,4 @@ test
     ${c}=    Evaluate    ${a} + ${b}
     Log    >>> c value is : ${c}
     Log To Console    >>> c value is : ${c}
+    Log To Console    >>> all action completed successfully
